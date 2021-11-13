@@ -5,7 +5,8 @@ import java.time.LocalDateTime
 import java.util.*
 import javax.persistence.*
 
-@Table(name ="email")
+@Table(name ="message")
+@Entity
 data class EmailEntity(
 
     @Id
@@ -22,5 +23,5 @@ data class EmailEntity(
 
     var sendDateEmail : LocalDateTime = LocalDateTime.now(),
 
-    var statusEmail: StatusEmail = StatusEmail.PROCESSING
+    var statusEmail: String = StatusEmail.PROCESSING.status()
 )
